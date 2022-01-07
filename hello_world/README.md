@@ -1,1 +1,0 @@
-Simply script for printing hello world
