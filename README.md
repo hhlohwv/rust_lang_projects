@@ -1,2 +1,2 @@
-# rust_lang_projects
+# Overview
 Collection of Rust projects.
