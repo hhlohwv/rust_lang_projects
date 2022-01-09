@@ -1,3 +1,5 @@
+// Bookmark: https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html
+
 // fn main() {
 //     let x = 5;  // not sure why the : i32, but I guess these things need to be explicitly declared? Just an autofill from VS Code, so will ignore for now
 //     println!("The value of x is: {}", x);
