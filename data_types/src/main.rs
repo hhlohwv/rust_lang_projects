@@ -1,3 +1,5 @@
+use std::io::BufRead;
+
 // Rust book 3.2 - Data Types
 // https://doc.rust-lang.org/book/ch03-02-data-types.html
 
@@ -70,17 +72,41 @@
 // }
 
 
+// fn main() {
+//     // The array data type, elements of data types must be the same
+//     let a: [i32; 5] = [1, 2, 3, 4, 5]; // with explicit data type and number of array elements
+
+//     let b = [3; 10];  // for copying the first value the number of times in the 2nd slot
+
+//     // Accessing elements of the array
+//     let first = a[0];
+//     let second = a[1];
+
+
+// }
+
+use std::io;
+
 fn main() {
-    // The array data type, elements of data types must be the same
-    let a: [i32; 5] = [1, 2, 3, 4, 5]; // with explicit data type and number of array elements
+    let a = [1, 2, 3, 4, 5];
 
-    let b = [3; 10];  // for copying the first value the number of times in the 2nd slot
+    println!("PLease enter an array index.");
 
-    // Accessing elements of the array
-    let first = a[0];
-    let second = a[1];
+    let mut index = String::new();
+
+    io::stdin()  // portion which accepts user input
+        .read_line(&mut index) // needed to actually read the line
+        .expect("Failed to read line");  // for error handling, displays the passed message if error occurs
+
+    let index: usize = index
+        .trim()  // trim removes whitespace before and after
+        .parse() // converts, or "parses", a string into a number, can easily cause errors
+        .expect("Index entered was not a number"); // again, a message to display if an error occurs during execution
+
+    let element = a[index];
+
+    println!(
+        "The value of the element at index {} is: {}",
+        index, element
+    );
 }
-
-// need to finish accessing different array types
-
-// next is Invalid Array Element Access
